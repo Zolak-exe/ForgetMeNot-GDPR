@@ -1,4 +1,4 @@
-# 🔒 GDPR Auto-Deleter & Exposure Scanner
+# 🔒 ForgetMeNot-GDPR
 
 Identity Scanner is a backend tool designed for automated GDPR data deletion and data breach exposure checking. It queries the **XposedOrNot** public API for data leaks and automates sending GDPR "right to be forgotten" deletion requests to the DPOs (Data Protection Officers) of exposed services.
 
