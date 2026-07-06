@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Identity Scanner</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Identity Scanner</h1>
+      <p class="subtitle">Découvre les comptes liés à ton email et exige leur suppression — automatisé.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1. Email à scanner</h2>
+        <div class="row">
+          <input id="email" type="email" placeholder="ton@email.com" autocomplete="email" />
+        </div>
+        <div id="autoconfig-info" class="hint hidden"></div>
+
+        <div class="row mailpass">
+          <input id="mail-pass" type="password" placeholder="Mot de passe boîte mail (laisse vide pour brèches seules)" autocomplete="current-password" />
+          <label class="checkbox inline"><input id="remember" type="checkbox" /> Se souvenir sur cet ordi</label>
+        </div>
+        <div id="creds-status" class="hint hidden"></div>
+        <div id="tuto" class="tuto hidden"></div>
+
+        <details class="imap-block">
+          <summary>Configuration avancée (auto-détectée)</summary>
+          <div class="grid">
+            <label>Host IMAP <input id="imap-host" type="text" /></label>
+            <label>Port IMAP <input id="imap-port" type="number" /></label>
+            <label class="checkbox"><input id="imap-tls" type="checkbox" /> TLS / SSL</label>
+            <label>Jours en arrière <input id="imap-days" type="number" value="1825" min="1" max="3650" /></label>
+            <label>Host SMTP <input id="smtp-host" type="text" /></label>
+            <label>Port SMTP <input id="smtp-port" type="number" /></label>
+            <label class="checkbox"><input id="smtp-tls" type="checkbox" /> SMTP TLS</label>
+          </div>
+        </details>
+
+        <div class="row actions">
+          <button id="scan-btn" class="primary">Scanner</button>
+          <span id="status" class="status"></span>
+        </div>
+      </section>
+
+      <section id="results" class="hidden">
+        <div class="card">
+          <h2>Comptes détectés <span id="count-accounts" class="badge">0</span></h2>
+          <p class="hint">Bouton "Supprimer le compte" ouvre la page de suppression officielle.</p>
+          <div id="accounts-list" class="cards"></div>
+        </div>
+
+        <div class="card">
+          <h2>Demandes RGPD <span id="count-data" class="badge">0</span></h2>
+          <div class="row">
+            <p class="hint" style="flex:1">Effacement Article 17 — envoi automatique au DPO de chaque service.</p>
+            <button id="bulk-send" class="warn">📩 Tout envoyer</button>
+            <button id="bulk-mailto">Tous via mailto</button>
+          </div>
+          <div id="data-list" class="cards"></div>
+          <div id="bulk-log" class="bulk-log"></div>
+        </div>
+
+        <div class="card">
+          <h2>Brèches connues <span id="count-breaches" class="badge">0</span></h2>
+          <p class="hint">
+            Les données déjà fuitées sont <strong>irrécupérables</strong> publiquement. Mais tu peux encore :
+            supprimer le compte chez l'entreprise, exiger l'effacement RGPD de ce qu'elle a en base,
+            et changer ton mot de passe (surtout si tu l'as réutilisé ailleurs).
+          </p>
+          <div id="breaches-list" class="cards"></div>
+        </div>
+
+        <div class="card">
+          <h2>Domaines non identifiés <span id="count-unknown" class="badge">0</span></h2>
+          <p class="hint">Présents dans ta boîte mais hors base curée.</p>
+          <div id="unknown-list" class="cards"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

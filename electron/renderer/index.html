@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Identity Scanner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Identity Scanner</h1>
+      <button id="quit" title="Quitter">Quitter</button>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Scanner une email</h2>
+        <div class="row">
+          <input id="email" type="email" placeholder="ton@email.com" autocomplete="email" />
+          <button id="scan-btn" class="primary">Scanner</button>
+        </div>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section id="results" class="hidden">
+        <div class="card">
+          <h2>Expositions <span id="count-expose" class="badge">0</span></h2>
+          <p class="hint">Sources publiques XposedOrNot.</p>
+          <div id="expose-list" class="list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Suppression de comptes <span id="count-accounts" class="badge">0</span></h2>
+          <p class="hint">Ouvre la page officielle du service pour supprimer ton compte.</p>
+          <div id="accounts-list" class="list"></div>
+        </div>
+
+        <div class="card">
+          <h2>Demandes RGPD Art.17 <span id="count-data" class="badge">0</span></h2>
+          <p class="hint">Ouvre un mail pré-rempli vers le DPO du service.</p>
+          <div id="data-list" class="list"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

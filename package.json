@@ -1,0 +1,30 @@
+{
+  "name": "identity-scanner",
+  "version": "0.1.0",
+  "description": "Scanner d'empreinte numérique — détecte les comptes et données liés à un email",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "electron": "npm --prefix electron run start",
+    "desktop": "npm run electron"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "imapflow": "^1.0.171",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

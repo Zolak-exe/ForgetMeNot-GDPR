@@ -1,0 +1,87 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif;
+  color: #d7d7d7;
+  background: #0d1117;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  background: #0b0f14;
+  border-bottom: 1px solid #1f2630;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.topbar h1 { font-size: 1rem; margin: 0; letter-spacing: 0.2px; }
+#quit {
+  background: #1f2630;
+  color: #d7d7d7;
+  border: 1px solid #2a313d;
+  border-radius: 0.4rem;
+  padding: 0.35rem 0.7rem;
+}
+#quit:hover { background: #2a313d; }
+
+main { padding: 1rem; max-width: 900px; margin: 0 auto; }
+.card {
+  background: #111820;
+  border: 1px solid #1f2630;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+}
+h2 { font-size: 1rem; margin: 0 0 0.5rem; }
+.hint { font-size: 0.82rem; color: #8b98a5; margin: 0; }
+.row { display: flex; gap: 0.5rem; align-items: center; }
+input[type="email"] {
+  flex: 1;
+  background: #0d1117;
+  color: #d7d7d7;
+  border: 1px solid #2a313d;
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.6rem;
+}
+.primary {
+  background: #339af0;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.45rem 0.8rem;
+}
+.primary:hover { background: #2a8ed9; }
+.status { font-size: 0.88rem; color: #9aa5b2; }
+
+.list { display: grid; gap: 0.5rem; }
+.entry {
+  background: #0f161d;
+  border: 1px solid #1f2630;
+  border-radius: 0.45rem;
+  padding: 0.55rem 0.65rem;
+}
+.entry-head { display: flex; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.25rem; }
+.entry-name { font-weight: 600; }
+.entry-meta { color: #8b98a5; font-size: 0.86rem; }
+.entry-cat { display: inline-block; font-size: 0.75rem; color: #a5b8c9; background: #19212b; border: 1px solid #252d38; border-radius: 0.35rem; padding: 0.15rem 0.45rem; margin: 0.2rem 0; }
+.entry-subjects { color: #b0b9c4; font-size: 0.86rem; }
+.entry-actions { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
+.entry-actions button {
+  background: #1f2630;
+  color: #e6e6e6;
+  border: 1px solid #2a313d;
+  border-radius: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+.entry-actions button.danger { background: #432432; border-color: #5c2a43; }
+.entry-actions button.danger:hover { background: #5c2a43; }
+.entry-actions button.warn { background: #3b341b; border-color: #5e4f1f; }
+.entry-actions button.warn:hover { background: #5e4f1f; }
+
+.badge { font-size: 0.8rem; background: #19212b; border: 1px solid #252d38; border-radius: 999px; padding: 0.1rem 0.5rem; color: #b5c0c8; }
+.hidden { display: none; }
